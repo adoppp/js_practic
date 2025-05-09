@@ -1,0 +1,39 @@
+[
+    {
+        "class": "5H",
+        "students": [
+            {
+                "name": "Olexander"
+            },
+            {
+                "name": "Daniil"
+            },
+            {
+                "name": "Mahdi"
+            },
+            {
+                "name": "Alex"
+            }
+        ]
+    },
+    {
+        "class": "6D",
+        "students": [
+            {
+                "name": "Ali"
+            },
+            {
+                "name": "Mango"
+            },
+            {
+                "name": "Oleg"
+            },
+            {
+                "name": "Sasha"
+            },
+            {
+                "name": "Pasha"
+            }
+        ]
+    }
+]
