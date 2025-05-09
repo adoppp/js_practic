@@ -1,65 +1,76 @@
 const classListElem = document.querySelector("[data-list]");
 const addButton = document.querySelector("#add");
 
+const DEFAULT_DATA = [
+    {
+        "class": "5H",
+        "students": [
+            {
+                "name": "Olexander"
+            },
+            {
+                "name": "Daniil"
+            },
+            {
+                "name": "Mahdi"
+            },
+            {
+                "name": "Alex"
+            }
+        ]
+    },
+    {
+        "class": "6D",
+        "students": [
+            {
+                "name": "Ali"
+            },
+            {
+                "name": "Mango"
+            },
+            {
+                "name": "Oleg"
+            },
+            {
+                "name": "Sasha"
+            },
+            {
+                "name": "Pasha"
+            }
+        ]
+    }
+];
+
 // set data from local-storage in list
 const setData = () => {
-    const KEY = "data";
-    const DEFAULT_DATA = [
-        {
-            "class": "5H",
-            "students": [
-                {
-                    "name": "Olexander"
-                },
-                {
-                    "name": "Daniil"
-                },
-                {
-                    "name": "Mahdi"
-                },
-                {
-                    "name": "Alex"
-                }
-            ]
-        },
-        {
-            "class": "6D",
-            "students": [
-                {
-                    "name": "Ali"
-                },
-                {
-                    "name": "Mango"
-                },
-                {
-                    "name": "Oleg"
-                },
-                {
-                    "name": "Sasha"
-                },
-                {
-                    "name": "Pasha"
-                }
-            ]
-        }
-    ];
+    const KEY = "class";
     
-    if (!localStorage.key(KEY)) {
+    if (!localStorage.getItem(KEY)) {
         localStorage.setItem(KEY, JSON.stringify(DEFAULT_DATA))
     }
     
-    const getted = JSON.parse(localStorage.getItem(KEY));
+    const classesList = JSON.parse(localStorage.getItem(KEY));
 
-    const liItems = getted.map(e => {
+    const liItems = classesList.map(e => {
         return `<li class="class_item"><h3>${e.class}</h3><span>${e.students.length}P.</span></li>`;
     })
     .reduce((perv, next) => {
         return perv.concat("", next);
-    });
+    }, "");
 
     classListElem.insertAdjacentHTML("beforeend", liItems);
 };
 
 setData();
 
-addButton.addEventListener("click", () => console.log("click"));
+//data-generator
+addButton.addEventListener("click", () => {
+    const liItems = DEFAULT_DATA.map(e => {
+        return `<li class="class_item"><h3>${e.class}</h3><span>${e.students.length}P.</span></li>`;
+    })
+    .reduce((perv, next) => {
+        return perv.concat("", next);
+    }, "");
+
+    classListElem.insertAdjacentHTML("beforeend", liItems);
+});
