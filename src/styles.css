@@ -59,6 +59,7 @@ a {
 }
 
 button {
+    cursor: pointer;
     border: none;
     margin: 0;
     padding: 0;
@@ -73,7 +74,7 @@ button {
     --bff_light: #CFE7EB;
     --active_bff: #A6D4DD;
     --hover_bff: #83C0CA;
-    --basic_transtion: background-color 0.7s ease 0s;
+    --basic_transtion: 0.7s ease 0s;
     --navy: #51526C;
 }
 
@@ -141,8 +142,12 @@ header {
     max-width: 74px;
 }
 
+
 main {
     margin: 42px 0 0 0;
+}
+
+main section {
     padding: 0 36px 42px 36px;
 }
 
@@ -157,8 +162,6 @@ main {
 }
 
 .add_button {
-    cursor: pointer;
-
     display: block;
 
     background-color: var(--active_bff);
@@ -177,10 +180,32 @@ main {
 .add_button svg {
     max-width: 24px;
     max-height: 24px;
+
+    stroke: var(--navy);
 }
 
 .add_button:hover {
     background-color: var(--hover_bff);
+}
+
+.close {
+    padding: 12px;
+
+    width: 60px;
+}
+
+.close svg {
+    max-width: 20px;
+    max-height: 20px;
+    transform: rotate(45deg);
+    stroke: var(--navy);
+
+    transition: var(--basic_transtion);
+}
+
+.close svg:hover {
+    stroke: var(--blue);
+    transform: rotate(228deg);
 }
 
 .class_item {
@@ -212,4 +237,35 @@ main {
 
 .class_item:last-child {
     margin: 0 0 16px 0;
+}
+
+.pop-up_background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #00000075;
+    backdrop-filter: blur(3px);
+
+    height: 100vh;
+    width: 100%;
+}
+
+.pop-up_container {
+    background-color: var(--white);
+
+    border: solid 4px var(--active_bff);
+    border-radius: 20px;
+
+    width: 580px;
+    height: 720px;
+}
+
+.hidden {
+    display: none;
 }
