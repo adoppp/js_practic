@@ -1,11 +1,13 @@
 //types
 type Student = {
     name: string;
+    id: number;
+    isHere: boolean;
 };
     
 type SchoolClass = {
     class: string;
-    id: number,
+    id: number;
     students: Student[];
 };
     
@@ -105,13 +107,11 @@ addClassForm?.addEventListener("submit", (e) => {
     actualData.push(newClass);
     localStorage.setItem(KEY, JSON.stringify(actualData));
     
-    const updatedData: Data = setData();
 
-    classListElem!.innerHTML = generateClassListItems(updatedData);
+    classListElem!.innerHTML = "";
+    renderData()
     
-    if (classNameInput) {
-        classNameInput.value = "";
-    };
+    classNameInput!.value = "";
 
     addPopUp ? toggleVisibility(addPopUp) : console.log("Type of 'addPopUp' is null");
 });

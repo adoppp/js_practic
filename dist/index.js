@@ -72,8 +72,8 @@ addClassForm === null || addClassForm === void 0 ? void 0 : addClassForm.addEven
     };
     actualData.push(newClass);
     localStorage.setItem(KEY, JSON.stringify(actualData));
-    const updatedData = setData();
-    classListElem.innerHTML = generateClassListItems(updatedData);
+    classListElem.innerHTML = "";
+    renderData();
     if (classNameInput) {
         classNameInput.value = "";
     }
