@@ -6,6 +6,7 @@ body {
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
+    color: var(--gray);
 }
 
 code {
@@ -76,6 +77,7 @@ button {
     --hover_bff: #83C0CA;
     --basic_transtion: 0.7s ease 0s;
     --navy: #51526C;
+    --gray: #222831;
 }
 
 header {
@@ -94,6 +96,17 @@ header {
 .header svg {
     max-width: 120px;
     max-height: 120px;
+
+    fill: var(--navy_light);
+    transition: fill var(--basic_transtion);
+}
+
+.header svg:hover {
+    fill: var(--hover_bff);
+}
+
+h1 {
+    font-size: 42px;
 }
 
 .profile_info {
@@ -145,20 +158,39 @@ header {
 
 main {
     margin: 42px 0 0 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr repeat(3, 0);
+    grid-template-rows: 1fr repeat(4, 0);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
 }
 
-main section {
+.class_section {
     padding: 0 36px 42px 36px;
+}
+
+.class_section h1 {
+    font-size: 42px;
 }
 
 .class_list {
     background-color: var(--bff_light);
 
-    height: 762px;
+    min-width: 370px;
 
     border-radius: 20px;
 
     padding: 16px;
+}
+
+.class_list ul {
+    min-height: 280px;
+
+    max-height: 520px;
+    
+    margin: 0 0 16px 0;
+
+    overflow-y: auto;
 }
 
 .add_button {
@@ -174,7 +206,7 @@ main section {
 
     margin: 0 auto;
 
-    transition: var(--basic_transtion);
+    transition: background-color  var(--basic_transtion);
 }
 
 .add_button svg {
@@ -200,7 +232,7 @@ main section {
     transform: rotate(45deg);
     stroke: var(--navy);
 
-    transition: var(--basic_transtion);
+    transition: stroke, transform var(--basic_transtion);
 }
 
 .close svg:hover {
@@ -235,8 +267,8 @@ main section {
     margin: 0 0 8px 0;
 }
 
-.class_item:last-child {
-    margin: 0 0 16px 0;
+.class_item div {
+    display: flex;
 }
 
 .pop-up_background {
@@ -268,4 +300,56 @@ main section {
 
 .hidden {
     display: none;
+}
+
+#deleteClassButton svg {
+    margin: 0 8px 0 0;
+
+    fill: var(--navy);
+
+    width: 24px;
+    height: 24px;
+
+    transition: fill var(--basic_transtion);
+}
+
+#deleteClassButton svg:hover {
+    fill: var(--gray);
+}
+
+.list {
+    background-color: var(--bff_light);
+    
+    min-width: 370px;
+
+    border-radius: 20px;
+    
+    padding: 16px;
+}
+
+.list ul  {
+    max-height: 520px;
+    
+    /* margin: 0 0 16px 0;
+
+    overflow-y: auto; */
+}
+
+.student {
+    background-color: var(--navy_light);
+}
+
+.total_students {
+    font-weight: 500;
+    font-size: 19px;
+}
+
+.students_list {
+    background-color: var(--active_bff);
+    
+    max-width: 380px;
+
+    padding: 12px;
+
+    border-radius: 20px;
 }

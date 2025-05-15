@@ -10,9 +10,11 @@
     <body>
         <header>
             <div class="header">
-                <svg>
-                    <use href="./public/symbol-defs.svg#bff" />
-                </svg>
+                <a href="/">
+                    <svg>
+                        <use href="./public/symbol-defs.svg#bff" />
+                    </svg>
+                </a>
 
                 <ul class="profile_info">
                     <il class="profile_info_item">User</il>
@@ -25,11 +27,10 @@
             </div>
         </header>
         <main>
-            <section>       
+            <section class="class_section">       
                 <h1>Klassen</h1>
                 <div class="class_list">
-                    <ul data-list>
-                    </ul>
+                    <ul data-list></ul>
                     <button class="add_button" id="add">
                     <svg>
                         <use href="./public/symbol-defs.svg#add" />
@@ -37,7 +38,21 @@
                     </button>
                 </div>
             </section>
-            
+
+            <section  class="app_section">
+                <h1 class="class_name_title">5H</h1>
+                <div class="list">
+                    <div class="students_list">
+                        <span class="total_students">Anzahl Personen:</span>
+                        <ul data-students></ul>
+                        <button class="add_button student" id="addStudent">
+                            <svg>
+                                <use href="./public/symbol-defs.svg#add" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
         </main>
         <div class="pop-up_background hidden" id="addPopUp">
             <div class="pop-up_container">
@@ -46,7 +61,7 @@
                         <use href="./public/symbol-defs.svg#add" />
                     </svg>
                 </button>
-                <form onsubmit="" id="addClassForm">
+                <form id="addClassForm">
                     <label for="name">Name von Klass</label>
                     <input type="text"  id="name" required>
                     <button type="submit">addieren</button>
