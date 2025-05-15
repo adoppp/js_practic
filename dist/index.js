@@ -74,10 +74,7 @@ addClassForm === null || addClassForm === void 0 ? void 0 : addClassForm.addEven
     localStorage.setItem(KEY, JSON.stringify(actualData));
     classListElem.innerHTML = "";
     renderData();
-    if (classNameInput) {
-        classNameInput.value = "";
-    }
-    ;
+    classNameInput.value = "";
     addPopUp ? toggleVisibility(addPopUp) : console.log("Type of 'addPopUp' is null");
 });
 //delete class
