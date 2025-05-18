@@ -53,7 +53,7 @@ const renderData = (): void => {
     const data: Data = setData();
     const liItems: string = generateClassListItems(data);
 
-    classListElem?.insertAdjacentHTML("beforeend", liItems !== "" ? liItems : '<li style="text-align: center; font-weight: 500; font-size: 19px;">Sie haben noch keine Klassen</li>');
+    classListElem?.insertAdjacentHTML("beforeend", liItems !== "[]" ? liItems : '<li style="text-align: center; font-weight: 500; font-size: 19px;">Sie haben noch keine Klassen</li>');
 };
 
 //li item generator
